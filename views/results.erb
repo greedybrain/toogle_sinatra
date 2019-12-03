@@ -1,0 +1,163 @@
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .wrapper {
+            padding: 20px 20px;
+        }
+        .back {
+            display: inline-block;
+        }
+        .t {
+            color: #056dff;
+        }
+        .o {
+            color: #ff4a4a;
+        }
+        .oo {
+            color: #e6bc30;
+        }
+        .g {
+            color: #056dff;
+        }
+        .l {
+            color: #45a353;
+        }
+        .e {
+            color: #ff4a4a;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        fieldset {
+            padding: 0 0 0 15px;
+            border: 1px solid #cfcfcf;
+            border-radius: 30px;
+            height: 40px;
+            outline: none;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .search-bar {
+            outline: none;
+            border: 0;
+            font-size: 1rem;
+            width: 75%;
+            height: 100%;
+        }
+        .sub-btn {
+            float: right;
+            height: 100%;
+            outline: none;
+            border: 1px solid #056dff;
+            /* margin-top: 20px; */
+            padding: 10px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            background-color: #056dff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color .5s;
+        }
+        .sub-btn:hover {
+            background-color: #0054c9;
+        }
+        .sub-btn i {
+            position: relative;
+            bottom: 3px;
+            right: 2px;
+        }
+        h3.search-results {
+            margin: 15px 0;
+        }
+        .results {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+        }
+        .box {
+            border-left: 1px solid #cfcfcf;
+            border-right: 1px solid #cfcfcf;
+            border-bottom: 1px solid #cfcfcf;
+            height: 170px;
+            width: 100%;
+            /* max-width: 950px; */
+            /* min-width: 350px;  */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px 0 #c9c9c9;
+            text-align: center;
+        }
+        .box .title {
+            border-bottom: 1px solid #cfcfcf;
+            padding: 10px 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: #056dff;
+            color: #fff;
+        }
+        .title a {
+            color: #fff;
+        }
+        .box .link {
+            padding: 10px 10px;
+            border-bottom: 1px solid #cfcfcf;
+        }
+        .link a {
+            color: #ff4a4a;
+        }
+        .box .description {
+            padding: 15px 10px;
+        }
+        footer {
+            width: 100%;
+            margin: 30px 0 5px 0;
+            text-align: center;
+            position: relative;
+            color: #a1a1a1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <a href="/"><h2 class="back"><span class="t">T</span><span class="o">o</span><span class="oo">o</span><span class="g">g</span><span class="l">l</span><span class="e">e</span></h2></a>
+        <br>
+        <form action="/results" method="POST">
+            <fieldset>
+                <input class="search-bar" type="text" name="search" placeholder="Search"/>
+                <button class="sub-btn" type="submit"><i class="fas fa-search fa-2x"></i></button>
+            </fieldset>
+        </form>
+        <h3 class="search-results">Search Results for : <%= @search.capitalize %></h3>
+        <br>
+        <div class="results">
+            <% @search_results.each do |result| %>
+                <div class="box">
+                    <div class="title">
+                        <a href="<%= result.link%>" target="_blank"><h4><%= result.title[0..40].capitalize + ' ...' %></h4></a>
+                    </div>
+                    <div class="link">
+                        <a href="<%= result.link %>" target="_blank"><%= result.link %></a>
+                    </div>
+                    <div class="description">
+                        <p><%= result.description[0..90] + ' ...' %></p>
+                    </div>
+                </div>
+                <br>
+            <% end %>
+        </div>
+        <footer>
+            <p>Toogle &copy; 2019. All Rights Reserved</p>
+        </footer>
+    </div>
+    <script src="https://kit.fontawesome.com/125c865154.js" crossorigin="anonymous"></script>
+</body>
+</html>

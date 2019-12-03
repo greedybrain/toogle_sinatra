@@ -1,0 +1,123 @@
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .wrapper {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-area {
+            margin-bottom: 150px;
+            width: 50%;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 6rem;
+            /* letter-spacing: 2px; */
+        }
+        .t {
+            color: #056dff;
+        }
+        .o {
+            color: #ff4a4a;
+        }
+        .oo {
+            color: #e6bc30;
+        }
+        .g {
+            color: #056dff;
+        }
+        .l {
+            color: #45a353;
+        }
+        .e {
+            color: #ff4a4a;
+        }
+        .sub-head {
+            margin: 10px 0;
+            color: #a1a1a1;
+        }
+        fieldset {
+            padding: 0  0 0 10px;
+            border: 1px solid #cfcfcf;
+            border-radius: 30px;
+            height: 40px;
+            outline: none;
+            margin-top: 20px;
+            /* width: 100%; */
+        }
+        .search-bar {
+            border: 1px solid red;
+            outline: none;
+            border: 0;
+            font-size: 1rem;
+            width: 80%;
+            height: 100%;
+            /* border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px; */
+        }
+        .sub-btn {
+            width: 40px;
+            float: right;
+            height: 100%;
+            outline: none;
+            border: 1px solid #056dff;
+            /* margin-top: 20px; */
+            padding: 10px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            background-color: #056dff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color .5s;
+        }
+        .sub-btn:hover {
+            background-color: #0054c9;
+        }
+        .sub-btn i {
+            position: relative;
+            bottom: 3px;
+            right: 2px;
+        }
+        footer {
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            position: relative;
+            top: 185px;
+            color: #a1a1a1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="search-area">
+            <h1><span class="t">T</span><span class="o">o</span><span class="oo">o</span><span class="g">g</span><span class="l">l</span><span class="e">e</span></h1>
+            <h5 class="sub-head">What was orininally a T-erminal/Command Line Google</h5>
+            <form action="/results" method="POST">
+                <fieldset>
+                    <input class="search-bar" type="text" name="search" placeholder="Search"/>
+                    <button class="sub-btn" type="submit"><i class="fas fa-search fa-2x"></i></button>
+                </fieldset>
+            </form>
+        </div>
+        <footer>
+            <p>Toogle &copy; 2019. All Rights Reserved</p>
+        </footer>
+        <script src="https://kit.fontawesome.com/125c865154.js" crossorigin="anonymous"></script>
+    </div>
